@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_new_version/src/app_route.dart';
 
 import '../bloc/counter_a_bloc/counter_a_bloc.dart';
 
@@ -17,6 +18,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () => Navigator.pushNamed(context, AppRoute.another),
+            icon: Icon(Icons.navigate_next),
+          ),
+        ],
         elevation: 0,
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,

@@ -1,10 +1,19 @@
 part of 'counter_b_bloc.dart';
 
-abstract class CounterBState extends Equatable {
-  const CounterBState();
-  
-  @override
-  List<Object> get props => [];
-}
+class CounterBState extends Equatable {
+  final int count;
 
-class CounterBInitial extends CounterBState {}
+  const CounterBState({required this.count});
+
+  CounterBState copyWith({int? count}) {
+    return CounterBState(count: count ?? this.count);
+  }
+
+  @override
+  String toString() {
+    return "count $count";
+  }
+
+  @override
+  List<Object> get props => [count];
+}
